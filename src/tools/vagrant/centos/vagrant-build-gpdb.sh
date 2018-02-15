@@ -2,6 +2,9 @@
 
 set -ex
 
+sudo ldconfig
+source /opt/rh/devtoolset-6/enable
+
 # clone the repos
 rm -fr gpdb
 

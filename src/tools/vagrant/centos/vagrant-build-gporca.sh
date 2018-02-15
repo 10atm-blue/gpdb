@@ -2,6 +2,8 @@
 
 set -ex
 
+sudo ldconfig
+
 # clone the repos
 rm -fr gpos
 rm -fr gp-xerces
@@ -36,6 +38,7 @@ pushd ~/gp-xerces
 popd
 
 pushd ~/gporca
+  git pull --ff-only
   rm -fr build
   mkdir build
   pushd build

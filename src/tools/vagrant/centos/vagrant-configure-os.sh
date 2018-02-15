@@ -42,6 +42,10 @@ sudo rm -rf /tmp/gpdb_cores
 sudo mkdir -p /tmp/gpdb_cores
 sudo chown vagrant:vagrant /tmp/gpdb_cores
 
+# LD conf
+sudo bash -c 'echo -e "/usr/local/lib\n/usr/local/lib64\n/usr/local" > /etc/ld.so.conf.d/libc.conf'
+sudo ldconfig
+
 # GPDB Kernel Limits
 sudo rm -f /etc/security/limits.d/gpdb.conf
 sudo bash -c 'printf "# GPDB-Specific Settings\n\n"     >> /etc/security/limits.d/gpdb.conf'
